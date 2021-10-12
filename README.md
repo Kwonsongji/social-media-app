@@ -10,3 +10,7 @@
     console.log(`Server running at ${res.url}`);
   })
 - add url mongo, touch config.js fill in, 
+- mkdir models fill in & require on index.js 
+
+nb : on sépare les dépendances et les require files
+
