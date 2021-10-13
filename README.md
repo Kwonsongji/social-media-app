@@ -14,6 +14,14 @@
 
 nb : on sépare les dépendances et les require files
   2.SIGNUP 
+  -  definir le type de chaque input :
+  go to typeDefs and fill in : 
+   input RegisterInput{
+    username: String!
+    password: String!
+    confirmPassword: String!
+    email: String!
+  }
   -touch user (resolvers/) ( CONTROLLER) and fill:
   - validate user data:
      const user = await User.findOne({ username });
