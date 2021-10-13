@@ -1,0 +1,3 @@
+## .trim():
+
+retire les espaces

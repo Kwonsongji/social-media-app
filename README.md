@@ -13,4 +13,43 @@
 - mkdir models fill in & require on index.js 
 
 nb : on sépare les dépendances et les require files
+  2.SIGNUP 
+  -touch user (resolvers/) ( CONTROLLER) and fill:
+  - validate user data:
+     const user = await User.findOne({ username });
+      if (user) {
+        throw new UserInputError('Username is taken', {
+          errors: {
+            username:'This username is taken'
+          }
+        })
+      }
+  - hash password:
+   ex: password = await bcrypt.hash(password, 12);
+  - create new data :
+  const newUser = new User({
+        username,
+        email,
+        password,
+        createdAt: new Date().toISOString()
+      })
+  - save new data and create token for user, which will take payload of user :
 
+    const res = await newUser.save(); //2- save it and place it res
+      npm i jswonwebtoken bcryptsjs
+
+      const token = jwt.sign({
+        id: res.id,
+        email: res.email,
+        username: res.username
+      }, SECRET_KEY, { expiresIn: '1h' }); // 3- create token for user, which will take payload of user
+  - spread new data :
+   return {
+        ...res._doc,
+        id: res._id,
+        token
+
+      }
+  3.VALIDATE SIGNUP
+  
+  - mkdir util, touch validator and fill it ( valider chaque champs )
