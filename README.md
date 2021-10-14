@@ -61,3 +61,12 @@ nb : on sépare les dépendances et les require files
   3.VALIDATE SIGNUP
   
   - mkdir util, touch validator and fill it ( valider chaque champs )
+
+  3.POST : 
+  - définir le type : go to typeDefs, 
+  case of create post : 
+    *type Query ( require id pour récupérer le post), 
+    *type Mutation (le body va être modifié)
+   case of delete a post : 
+    *type Mutation ( on récupère l'id du post pour effacer les datas du post )
+- go to posts (resolvers) 
