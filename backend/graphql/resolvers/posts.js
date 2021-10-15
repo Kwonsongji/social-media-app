@@ -1,10 +1,11 @@
 const Post = require('../../models/Post');
+const checkAuth = require('../../util/check-auth');
 
 module.exports = {
   Query: {
     async getPosts() {
       try {
-        const posts = await Post.find();
+        const posts = await Post.find().sort({ createdAt: -1});
         return posts;
       } catch (err) {
         throw new Error(err);
@@ -27,7 +28,19 @@ module.exports = {
     // it will take the "_" (parent) and destructure of body
     // the third argument is context ( on a accès à la req.body, on aura accès au headers et on pourra déterminer si l'user est co')
     async createPost(_, { body }, context) {
-      
+      const user = checkAuth(context);
+      console.log(user);
+
+      const newPost = new Post({
+        body,
+        user: user.id,
+        username: user.username,
+        createdAt: new Date().toISOString()
+      });
+      const post = await newPost.save();
+
+      return post;
     }
+    // add this mutation in index resolvers
   }
 }
