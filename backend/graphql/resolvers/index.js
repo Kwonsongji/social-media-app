@@ -1,6 +1,6 @@
 const postsResolvers = require('./posts');
 const userResolvers = require('./users');
-const comments = require('./comments');
+const commentsResolvers = require('./comments');
 
 module.exports = {
   Query: {

@@ -1,5 +1,6 @@
 const { UserInputError } = require('apollo-server')
 const Post = require('../../models/Post');
+const checkAuth = require('../../util/check-auth');
 
 module.exports = {
   // Mutation key
@@ -15,10 +16,15 @@ module.exports = {
       }
       const post = await Post.findById(postId);
       if (post) {
-        post.comments.unshift(
+        post.comments.unshift({
           body,
-          username)
-      }
-    }
+          username,
+          createdAt: new Date().toISOString()
+        })
+        await post.save();
+        return post;
+      } else throw new UserInputError('Post not found');
+    },
+    async deleteComment(_, { postId})
   }
 }
