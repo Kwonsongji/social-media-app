@@ -37,7 +37,7 @@ module.exports = {
         throw new UserInputError('Wrong credentials', { errors})
       }
       const token = generateToken(user)
-          return {
+        return {
         ...user._doc,
         id: user._id,
         token
