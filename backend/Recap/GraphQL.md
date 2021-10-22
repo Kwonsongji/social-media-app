@@ -7,7 +7,7 @@ Elle peut renvoyer un objet, être asynchrone
 
 ## Mutation 
 modifie la data 
-
+https://medium.com/paypal-tech/graphql-resolvers-best-practices-cd36fdbcef55
 ex : 
 
 mutation{

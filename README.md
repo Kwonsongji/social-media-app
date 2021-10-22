@@ -1,5 +1,5 @@
 # social-media-app
-  1.SERVER APOLLO,DDB 
+  1.BACK : SERVER APOLLO,DDB 
 - go Mongo : db, cluster, user, ip 
 - npm init -y 
 - touch index.js .gitignore
@@ -70,3 +70,20 @@ nb : on sépare les dépendances et les require files
    case of delete a post : 
     *type Mutation ( on récupère l'id du post pour effacer les datas du post )
 - go to posts (resolvers) 
+
+2.FRONT 
+
+ ## APOLLO PROVIDER 
+ 1. CONNECTING APOLLO CLIENT TO APPOLO SERVER
+- npm install @apollo/react-hooks apollo-cache-inmemory apollo-link-http apollo-client
+- touch ApolloProvider.js & fill it 
+ 2. ROUTER & CSS
+- npm react-router-dom semantic-ui-react semantic-ui-css
+- npm install -g sass (or without -g)
+  3. RUN SERVER FRONT & BACK
+- cd frontend/ npm start
+- cd backend/ npm run server
+  4. QUERY
+- npm i graphql graphql-tag
+- import
+
