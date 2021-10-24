@@ -82,7 +82,7 @@ nb : on sépare les dépendances et les require files
 - npm install -g sass (or without -g)
   3. RUN SERVER FRONT & BACK
 - cd frontend/ npm start
-- cd backend/ npm run server
+- cd backend/ npm run serve
   4. QUERY
 - npm i graphql graphql-tag
 - import

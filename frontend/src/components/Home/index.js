@@ -7,24 +7,30 @@ import './style.scss';
 const Home = () => {
   const {
     loading,
-    data  : { getPosts: posts } 
+    /*  getPosts */
+    data: { getPosts } = {}
+    /* data : {  getPosts:  posts }  */ 
   } = useQuery(FETCH_POSTS_QUERY);
- /*  if (data) {
-    console.log(data);
-  } */
+   if ( getPosts) {
+    console.log(getPosts);
+  }  
+  
   return (
     <Grid columns={3} >
       <Grid.Row>
         <h1>Postes récents</h1>
       </Grid.Row>
-    <Grid.Row>
+     <Grid.Row>
         {loading ? (
           <h1>Loading posts... </h1>
         ) : (
-            posts &&
-            posts.map((post) => (
-             <Grid.Column key={post.id}>
-              <PostCard post={post}/>
+            getPosts &&
+            getPosts.map((getPost) => (
+              <Grid.Column
+                key={getPost.id}
+                style={{marginBottom:20}}
+              >
+              <PostCard getPost={getPost}/>
             </Grid.Column>
           ))
     )}

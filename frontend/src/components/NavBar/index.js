@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 const NavBar = () => {
   //state = { activeItem: 'home' }
   const pathname = window.location.pathname;
+
   const path = pathname === '/' ? 'home' : pathname.substr(1);
   const [ activeItem, setActiveItem] = useState(path)
   // handleItemClick = (e, { name }) => this.setState({ activeItem: name })
@@ -29,7 +30,7 @@ const NavBar = () => {
               active={activeItem === 'login'}
               onClick={handleItemClick}
               as={NavLink}
-              to="/login"
+              to="/connexion"
             />
         </Menu.Menu>
          <Menu.Item
@@ -37,7 +38,7 @@ const NavBar = () => {
             active={activeItem === 'register'}
             onClick={handleItemClick}
             as={NavLink}
-            to="/register"
+            to="/inscription"
           />
         </Menu>
 
