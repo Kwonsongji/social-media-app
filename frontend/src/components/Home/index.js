@@ -13,7 +13,8 @@ const Home = () => {
   } = useQuery(FETCH_POSTS_QUERY);
    if ( getPosts) {
     console.log(getPosts);
-  }  
+  }
+ 
   
   return (
     <Grid columns={3} >
@@ -30,6 +31,7 @@ const Home = () => {
                 key={getPost.id}
                 style={{marginBottom:20}}
               >
+                <p> {getPost.body} </p>
               <PostCard getPost={getPost}/>
             </Grid.Column>
           ))

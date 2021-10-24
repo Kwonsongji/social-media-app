@@ -2,8 +2,8 @@ import React from 'react';
 import { Card,  Image  } from 'semantic-ui-react'
 import moment from 'moment'
 
-const PostCard = ({ post : body, createdAt, id, username, likeCount, commentCount, likes }) => {
-
+const PostCard = ({ getPost }) => {
+const { body, createdAt, id, username, likeCount, commentCount, likes} = getPost
   return (
     <Card.Group>
     <Card>
