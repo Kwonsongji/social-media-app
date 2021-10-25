@@ -18,7 +18,7 @@ const Home = () => {
   
   return (
     <Grid columns={3} >
-      <Grid.Row>
+      <Grid.Row className="home__title">
         <h1>Postes récents</h1>
       </Grid.Row>
      <Grid.Row>
@@ -29,9 +29,9 @@ const Home = () => {
             getPosts.map((getPost) => (
               <Grid.Column
                 key={getPost.id}
-                style={{marginBottom:20}}
+                 style={{marginBottom:20}}  
               >
-                <p> {getPost.body} </p>
+  
               <PostCard getPost={getPost}/>
             </Grid.Column>
           ))
