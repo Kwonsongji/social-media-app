@@ -12,21 +12,21 @@ const PostCard = ({ getPost }) => {
     console.log( 'Comment on post !!');
 };
   return (
-    <Card.Group>
-    <Card fluid>
-      <Card.Content>
+    <Card.Group >
+    <Card fluid >
+      <Card.Content   >
         <Image
           floated='right'
           size='mini'
           src='https://react.semantic-ui.com/images/avatar/large/molly.png'
         />
-        <Card.Header>{username}</Card.Header>
+        <Card.Header  >{username}</Card.Header>
           <Card.Meta  as={NavLink} to={`/posts/${id}`}>{moment(createdAt).fromNow()}</Card.Meta>
-        <Card.Description>
+        <Card.Description >
           {body}
         </Card.Description>
       </Card.Content>
-      <Card.Content extra>
+      <Card.Content extra color= 'black' inverted>
         <Button as='div'  labelPosition='right' onClick={likePost}>
       <Button color='teal'>
         <Icon name='heart' />

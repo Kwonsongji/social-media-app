@@ -17,11 +17,11 @@ const Home = () => {
  
   
   return (
-    <Grid columns={3} >
+    <Grid columns={3}   >
       <Grid.Row className="home__title">
         <h1>Postes récents</h1>
       </Grid.Row>
-     <Grid.Row>
+     <Grid.Row >
         {loading ? (
           <h1>Loading posts... </h1>
         ) : (
@@ -29,10 +29,11 @@ const Home = () => {
             getPosts.map((getPost) => (
               <Grid.Column
                 key={getPost.id}
-                 style={{marginBottom:20}}  
+                style={{ marginBottom: 20 }}
+                              
               >
   
-              <PostCard getPost={getPost}/>
+              <PostCard getPost={getPost} />
             </Grid.Column>
           ))
     )}
